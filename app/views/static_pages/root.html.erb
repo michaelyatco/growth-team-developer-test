@@ -1,13 +1,19 @@
 <div ng-app="app">
   {{ 1 + 1 }}
 </div>
-<%= @gems %>
 <img src="/assets/map.png">
 
-<h2>Search Gems</h2>
-<div class="light">
-  <form id="main_search" class= "header__search_wrap" action="https://rubygems.org/search" accept-charset="UTF-8" method="get">
-  <span><input type="text" class="search rounded" placeholder="Search..."><input type="button" value="Search"></span>
-  </form>
-</div>
+      <form class="navbar-form navbar-left">
+        <%= form_tag "/", method: :get do %>
+          <div class="form-group">
+            <input type="text" class="form-control" name="search_result" placeholder="Search...">
+           </div>
+            <input type="submit" class="btn btn-default">
+        <% end %>
+      </form>
 
+      <%= @gems.each do |result| %>
+      <p> <%= result["name"] %> </p>
+      <p> <%= result["info"] %> </p>
+      <p> <%= result["platform"] %> </p>
+      <% end %>
