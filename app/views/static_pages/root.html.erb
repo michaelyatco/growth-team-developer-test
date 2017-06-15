@@ -1,8 +1,5 @@
-<div ng-app="app">
-  {{ 1 + 1 }}
-</div>
 <img src="/assets/map.png">
-
+	<h1>Search Gems</h1>	
       <form class="navbar-form navbar-left">
         <%= form_tag "/", method: :get do %>
           <div class="form-group">
@@ -12,8 +9,10 @@
         <% end %>
       </form>
 
-      <%= @gems.each do |result| %>
-      <p> <%= result["name"] %> </p>
-      <p> <%= result["info"] %> </p>
-      <p> <%= result["platform"] %> </p>
+      <% @gems.first(1).each do |result| %>
+      	<p> <a href=" <%= result["project_uri"] %>" ><%= result["name"] %></a></p>
+      	<p> Information </p>
+      	<p> <%= result["info"] %> </p>
+      	<p> Platform </p> 
+      	<p> <%= result["platform"] %> </p>
       <% end %>
