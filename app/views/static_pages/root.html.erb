@@ -1,18 +1,32 @@
 <img src="/assets/map.png">
-	<h1>Search Gems</h1>	
-      <form class="navbar-form navbar-left">
-        <%= form_tag "/", method: :get do %>
-          <div class="form-group">
-            <input type="text" class="form-control" name="search_result" placeholder="Search...">
-           </div>
-            <input type="submit" class="btn btn-default">
-        <% end %>
-      </form>
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Search Gems</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-3">
+            <form action="" class="search-form">
+               <%= form_tag "/", method: :get do %>
+                <div class="form-group has-feedback">
+            		<label for="search" class="sr-only">Search Gems</label>
+            		<input type="text" class="form-control" name="search_result" id="search" placeholder="Search Gems">
+              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	</div>
+            	<% end %>
       <% @gems.first(1).each do |result| %>
-      	<p> <a href=" <%= result["project_uri"] %>" ><%= result["name"] %></a></p>
+      	<p> <a href=" <%= result["project_uri"] %>" target="_blank"><%= result["name"] %></a></p>
+      		<div class="checkbox">
+  				<label><input type="checkbox" value=""><img src="/assets/star-grey"></label>
+			</div>
       	<p> Information </p>
       	<p> <%= result["info"] %> </p>
       	<p> Platform </p> 
       	<p> <%= result["platform"] %> </p>
       <% end %>
+            </form>
+        </div>
+    </div>
+</div>
+
