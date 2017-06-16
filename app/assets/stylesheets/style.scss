@@ -1,4 +1,15 @@
-img {
+// #background {
+//     background-image: url("images/map.png");
+//     float: left;
+//     display: block;
+//     width: auto;
+//     height: auto;
+//     max-width: 100%;
+//     max-height: 90%;
+//     margin: 20px auto;
+// }
+
+.img-background {
 	float: left;
 	display: block;
     width: auto;
@@ -42,6 +53,10 @@ img {
   box-shadow: none;
   display:block;
   padding-top: 20px;
+}
+
+.glyphicon-search {
+  padding-top:10px;
 }
 
 h1 {

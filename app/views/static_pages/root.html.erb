@@ -1,4 +1,4 @@
-<img src="/assets/map.png">
+<img src="/assets/map.png" class="img-background">
 <!-- <div class="left-container">blahblah</div> -->
 <div class="container">
     <div class="row">
@@ -13,14 +13,14 @@
                 <div class="form-group has-feedback">
             		<label for="search" class="sr-only">Search Gems</label>
             		<input type="text" class="form-control" name="search_result" id="search" placeholder="Search Gems">
-              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+              		<%= image_tag "magnifying-glass.png" %>
             	</div>
                <% end %>
 				    <% if @gems == nil %>
 					    <h1>Welcome!</h1>
 					<% else %>	
 		                <% @gems.first(1).each do |result| %>
-				           <p> <a href=" <%= result["project_uri"] %>" target="_blank"><%= result["name"] %></a></p>
+				           <p> <a href=" <%= result["project_uri"] %>" target="_blank"><%= result["name"] %></a> <span><%= image_tag "star-gray.png" %></span></p>
 				      	   <p> Information </p>
 				      	   <p> <%= result["info"] %> </p>
 				      	   <p> Platform </p> 
