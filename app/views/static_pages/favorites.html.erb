@@ -34,10 +34,10 @@
 					    <h1>Welcome!</h1>
 					<% else %>	
 		                <% @gems.first(1).each do |result| %>
-				           <p> <a href=" <%= result["project_uri"] %>" target="_blank"><%= result["name"] %></a></p>
-				      	   <p> Information </p>
+				           <p class="gem-name"> <a href=" <%= result["project_uri"] %>" target="_blank"><%= result["name"] %></a></p>
+				      	   <p class="information"> Information </p>
 				      	   <p> <%= result["info"] %> </p>
-				      	   <p> Platform </p> 
+				      	   <p class="information"> Platform </p> 
 				      	   <p> <%= result["platform"] %> </p>
 	 				    <% end %>
 				    <% end %>
