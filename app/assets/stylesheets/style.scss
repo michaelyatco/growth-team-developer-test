@@ -9,6 +9,36 @@
 //     margin: 20px auto;
 // }
 
+.current-page {
+  background: rgba(204, 204, 204, 0.2);
+  width: 130px;
+  color: white;
+}
+
+.teachable-logo {
+  position: absolute;
+  left: 420px;
+  top: 50px;
+}
+
+.search-button {
+  position: absolute;
+  left: 400px;
+  top: 400px;
+  font-family: "Lato";
+  color: #FFF;
+  padding: 10px;
+}
+
+.fav-button {
+  position: absolute;
+  left: 400px;
+  top: 430px;
+  padding: 10px;
+  font-family: "Lato";
+  color: #FFF;
+}
+
 .img-background {
 	float: left;
 	display: block;
