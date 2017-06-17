@@ -10,10 +10,10 @@
   <script type="text/javascript">
     var favGems = [];
     function addToListFavGems(){
-      var newFavGem=document.getElementbyId('gemName');
-      favGems.push(newFavGem.value);
+      var newFavGem = document.getElementById('gemName');
+      favGems.push('newFavGem').value;
       if(window.localStorage){
-        localStorage,setItem('gemNameKey', JSON.stringify(favGems))
+        localStorage.setItem('gemNameKey', JSON.stringify(favGems)
       }
     }
 
@@ -30,6 +30,17 @@
         var gemNames = localStorage.removeItem('gemNameKey');
       }
     }
+
+    function test() {
+      alert(window.document.pic.src);
+      if (document.pic.src=='/assets/star-gray.png') {
+        document.pic.src='/assets/star-blue.png';
+      }
+      else if (document.pic.src=='/assets/star-blue.png') {
+        document.pic.src='/assets/star-gray.png';
+      }
+    }
+
 
   </script>  
 </head>

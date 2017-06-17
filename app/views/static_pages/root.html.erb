@@ -30,11 +30,8 @@
 				  <% else %>	
             <% @gems.first(1).each do |result| %>
                 <p class="gem-name"> <a href=" <%= result["project_uri"] %>" target="_blank">
-                <%= result["name"] %></a>
-                  <span>
-                    <input type="text" id="gemName" name="gemName">
-                    <button onclick="addToListFavGems()"><img src="/assets/star-gray/png"></button>
-                  </span></p>
+                <%= result["name"] %></a> <img src="/assets/star-gray" onclick="addToListFavGems()"/>
+                </p>
                 <p class="information"> Information </p>
                 <p> <%= result["info"] %> </p>
                 <p class="information"> Dependencies </p> 
