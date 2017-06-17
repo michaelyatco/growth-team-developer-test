@@ -1,47 +1,62 @@
-<img src="/assets/map.png">
-<!--  <div class="left-container">blahblah</div>
-    <div class ="container">
+<img src="/assets/map.png" class="img-background">
 
 <div id="background">
-    <div class="content">Search<a href="/"></a></div>
-    <div class="content">Favorites<a href="/favorites"></a></div>
+  <div class="teachable-logo"><%= image_tag "teachable-logo.png" %></div>
+    <div class="search-button <%= 'current-page' if request.path == '/' %>">
+    <a href="/" id="menu">Search</a></div>
+    <div class="fav-button <%= 'current-page' if request.path == '/favorites' %>">
+    <a href="/favorites" id="menu">Favorites</a></div>
 </div>
-        
-    </div> -->
-    <div id="background">
-        <div class="teachable-logo"><%= image_tag "teachable-logo.png" %></div>
-        <div class="search-button <%= 'current-page' if request.path == '/' %>">Search<a href="/"></a></div>
-        <div class="fav-button <%= 'current-page' if request.path == '/favorites' %>">Favorites<a href="/favorites"></a></div>
-    </div>
-    <div class="container">
+  
+  <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Favorite Gems</h1>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-4 col-md-offset-3">
+        <form action="" class="search-form">
+          <%= form_tag "/", method: :get do %>
+            <div class="form-group has-feedback">
+                <label for="search" class="sr-only">Search Gems</label>
+                <input type="text" class="form-control" name="search_result" id="search" placeholder="Search Gems">
+                <span><img src="/assets/magnifying-glass.png" class="img-magnifying-glass"%></span>
+            </div>
+          <% end %>
+                <% if @gems == nil %>
+                    <h1>Welcome!</h1>
+                  <% else %>    
+            <% @gems.first(1).each do |result| %>
+                <p class="gem-name"> <a href=" <%= result["project_uri"] %>" target="_blank" class="gem">
+                <%= result["name"] %></a>
+                  <span>
+                    <script type="text/javascript">
+                    function test()
+                    {
+                      alert(window.document.pic.src);
+                      if (document.pic.src=='/assets/star-gray.png'){
+                    documernt.pic.src='/assets/star-blue.png';
+                    }
+                    else if (document.pic.src=='/assets/star-blue.png'){
+                    document.pic.src='/assets/star-gray.png';
+                    }
+                    }
+                    </script>
+                    <img src="/assets/star-gray" onclick="test()"/>
+                  </span></p>
+                <p class="information"> Information </p>
+                <p> <%= result["info"] %> </p>
+                <p class="information"> Dependencies </p> 
+                <% result["dependencies"]["runtime"].each do |dependency| %>
+                  <p> <%= dependency["name"] %> </p>
+                <% end %>
+            <% end %>
+                <% end %>
+        </form>
+      </div>
+    </div>
+  </div>    
 
-            <h1>Favorite Gems</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-md-offset-3">
-            <form action="" class="search-form">
-               <%= form_tag "/", method: :get do %>
-                <div class="form-group has-feedback">
-            		<label for="search" class="sr-only">Search Gems</label>
-            		<input type="text" class="form-control" name="search_result" id="search" placeholder="Search Gems">
-              		<img src ="glyphicon glyphicon-search form-control-feedback"></span>
-            	</div>
-               <% end %>
-				    <% if @gems == nil %>
-					    <h1>Welcome!</h1>
-					<% else %>	
-		                <% @gems.first(1).each do |result| %>
-				           <p class="gem-name"> <a href=" <%= result["project_uri"] %>" target="_blank"><%= result["name"] %></a></p>
-				      	   <p class="information"> Information </p>
-				      	   <p> <%= result["info"] %> </p>
-				      	   <p class="information"> Platform </p> 
-				      	   <p> <%= result["platform"] %> </p>
-	 				    <% end %>
-				    <% end %>
-            </form>
-        </div>
-    </div>
-</div>
+
