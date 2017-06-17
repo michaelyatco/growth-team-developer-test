@@ -32,19 +32,8 @@
                 <p class="gem-name"> <a href=" <%= result["project_uri"] %>" target="_blank">
                 <%= result["name"] %></a>
                   <span>
-                    <script type="text/javascript">
-                    function test()
-                    {
-                      alert(window.document.pic.src);
-                      if (document.pic.src=='/assets/star-gray.png'){
-                    documernt.pic.src='/assets/star-blue.png';
-                    }
-                    else if (document.pic.src=='/assets/star-blue.png'){
-                    document.pic.src='/assets/star-gray.png';
-                    }
-                    }
-                    </script>
-                    <img src="/assets/star-gray" onclick="test()"/>
+                    <input type="text" id="gemName" name="gemName">
+                    <button onclick="addToListFavGems()"><img src="/assets/star-gray/png"></button>
                   </span></p>
                 <p class="information"> Information </p>
                 <p> <%= result["info"] %> </p>

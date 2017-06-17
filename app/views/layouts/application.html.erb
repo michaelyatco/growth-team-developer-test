@@ -6,6 +6,32 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+  <script type="text/javascript">
+    var favGems = [];
+    function addToListFavGems(){
+      var newFavGem=document.getElementbyId('gemName');
+      favGems.push(newFavGem.value);
+      if(window.localStorage){
+        localStorage,setItem('gemNameKey', JSON.stringify(favGems))
+      }
+    }
+
+    function readGemNames(){
+      if (window.localStorage) {
+        var gemNames = localStorage.getItem('gemNameKey');
+        var resultGemNames = JSON.parse(gemNames);
+        document.getElementbyId('displayGemNames').innerHTML = resultGemNames;
+    }
+      }
+
+    function removeGemNames(){
+      if (window.localStorage) {
+        var gemNames = localStorage.removeItem('gemNameKey');
+      }
+    }
+
+  </script>  
 </head>
 <body>
 
