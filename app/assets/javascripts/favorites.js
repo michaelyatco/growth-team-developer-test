@@ -8,7 +8,6 @@ function addToListFavGems(star){
   if (favGems.indexOf(gemName) === -1) {
     favGems.push(gemName);
   } else {
-    console.log("time to remove!");
     removeGemNames(favGems, gemName);
   }
   if(window.localStorage){
@@ -23,11 +22,10 @@ function addToListFavGems(star){
 
 function removeGemNames(favGems, gemName) {
   if (window.localStorage) {
-    console.log("I'm removing the gem")
     if (favGems.indexOf(gemName) !== -1) {
       console.log(favGems);
       favGems.splice(favGems.indexOf(gemName), 1);
-      console.log(favGems);
+        console.log(favGems);
       localStorage.removeItem('gemNameKey');
       localStorage.setItem('gemNameKey', JSON.stringify(favGems));
     }
@@ -37,17 +35,20 @@ function removeGemNames(favGems, gemName) {
 function readGemNames(){
   if (window.localStorage && window.location.href.indexOf('favorites') !== -1) {
     var gemNames = localStorage.getItem('gemNameKey');
-    console.log(gemNames);
+      console.log(gemNames);
     var resultGemNames = JSON.parse(gemNames);
-    console.log(resultGemNames);
+      console.log(resultGemNames);
       document.getElementById('displayGemNames').innerHTML = resultGemNames;
 
     }
   }
 
-$(document).ready(function() {
-  readGemNames();
-});
+// $(document).ready(function() {
+//   readGemNames();
+// });
 
-
+function favoriteGems(){
+  var favList = localStorage.getItem('gemNameKey');
+  
+};
 
