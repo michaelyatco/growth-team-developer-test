@@ -17,7 +17,7 @@
         <div class="col-md-12 col-md-offset-3">
           <h1>Your Favorite Gems</h1>
             <ul ng-repeat='gem in gemArray track by $index'>
-              <li>{{ gem }} <img src="/assets/star-blue" onclick="addToListFavGems(this)"/></li>
+              <li>{{ gem }} <img src="/assets/star-blue" onclick="addToListFavGems(this)" ng-click="remove(gemNameKey)"/></li>
             </ul>
         </div>
       </div>
