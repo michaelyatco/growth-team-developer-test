@@ -25,16 +25,15 @@
             	<span><input type="image" img src="/assets/magnifying-glass.png" class="img-magnifying-glass" alt="Submit Form"%></span>
           	</div>
           <% end %>
-			    <% if @gems == nil %>
-				    <h1>Welcome!</h1>
-				  <% else %>	
+          <% if @gems ==  "Request is missing param 'query'" %>
+				    <h5>Oh no! Looks like you didn't enter any gem.</h5>
+          <% else %>
             <% @gems.first(1).each do |result| %>
-                <p class="gem-name"> <a href=" <%= result["project_uri"] %>" target="_blank">
-                <%= result["name"] %></a> <img src="/assets/star-gray" onclick="addToListFavGems(this)"/>
-                </p>
-                <p class="information"> Information </p>
+              <p class="gem-name"> <a href=" <%= result["project_uri"] %>" target="_blank">
+                <%= result["name"] %></a> <img src="/assets/star-gray" onclick="addToListFavGems(this)"/></p>
+              <p class="information"> Information </p>
                 <p> <%= result["info"] %> </p>
-                <p class="information"> Dependencies </p> 
+              <p class="information"> Dependencies </p> 
                 <% result["dependencies"]["runtime"].each do |dependency| %>
                   <p> <%= dependency["name"] %> </p>
                 <% end %>

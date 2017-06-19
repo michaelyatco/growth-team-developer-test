@@ -2,9 +2,9 @@ function addToListFavGems(star) {
   if (localStorage.getItem('gemNameKey')) {
     var favGems = JSON.parse(localStorage.getItem('gemNameKey'));
   } else {
-    var favGems = [];
+    favGems = [];
   }
-  var gemName = (star.previousSibling.parentNode.innerText).replace(" ", "");
+  var gemName = (star.previousSibling.parentNode.innerText).replace(" ", "");//Extra space per element of LocalStor Array
   if (favGems.indexOf(gemName) === -1) {
     favGems.push(gemName);
   } else {
