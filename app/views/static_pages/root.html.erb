@@ -2,10 +2,10 @@
 
 <div id="background">
   <div class="teachable-logo"><%= image_tag "teachable-logo.png" %></div>
-    <div class="search-button <%= 'current-page' if request.path == '/' %>">
-    <a href="/">Search</a></div>
-    <div class="fav-button <%= 'current-page' if request.path == '/favorites' %>">
-    <a href="/favorites">Favorites</a></div>
+  <div class="search-button current-page">
+  <a href="/">Search</a></div>
+  <div class="fav-button">
+  <a href="/favorites">Favorites</a></div>
 </div>
   
   <div class="container">

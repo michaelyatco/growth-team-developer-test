@@ -52,15 +52,4 @@ function readGemNames() {
 
   }
 }
-// JQuery-method below works but need to figure out AngularJS for consistency in my code. NOTE - Success.
-
-// $(document).ready(function() {
-//   var gems = JSON.parse(window.localStorage.getItem('gemNameKey'));
-//   html = "<ul>";
-//   for (var i = 0; i < gems.length; i++) {
-//     html += "<li>" + gems[i] + "<img src='/assets/star-blue' onclick='addToListFavGems(this)'/>" + "</li>";
-//   }
-//   html += "</ul>";
-//   document.getElementById('favorites').innerHTML = html;
-// });
 
