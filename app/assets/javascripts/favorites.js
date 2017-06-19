@@ -18,15 +18,10 @@ function addToListFavGems(star) {
 
 function deleteFromListFavGems(star) {
   var favGems = JSON.parse(localStorage.getItem('gemNameKey'));
-  console.log(favGems);
   var gemName = (star.previousSibling.parentNode.innerText);
-  console.log(gemName);
   var indexToRemove = favGems.indexOf(gemName.replace("  ", ""));
-  console.log(favGems.indexOf(gemName.parse));
-  console.log(indexToRemove);
   favGems.splice(indexToRemove, 1);
   localStorage.setItem('gemNameKey', JSON.stringify(favGems));
-  console.log(localStorage);
 }
 
 
