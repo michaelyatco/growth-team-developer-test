@@ -25,7 +25,7 @@
             	<span><input type="image" img src="/assets/magnifying-glass.png" class="img-magnifying-glass" alt="Submit Form"%></span>
           	</div>
           <% end %>
-          <% if @gems ==  "Request is missing param 'query'" %>
+          <% if @gem ==  "Request is missing param 'query'" %>
 				    <h5>Oh no! Looks like you didn't enter any gem.</h5>
           <% else %>
             <% @gem.first(1).each do |result| %>
