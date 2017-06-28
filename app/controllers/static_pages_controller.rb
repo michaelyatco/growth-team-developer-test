@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
         @gem.push(gem) if gem['name'].downcase == search_result
       end
   	else
-  	  @gems = []
+  	  @gem = []
     end
   end
 
