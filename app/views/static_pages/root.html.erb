@@ -28,7 +28,7 @@
           <% if @gems ==  "Request is missing param 'query'" %>
 				    <h5>Oh no! Looks like you didn't enter any gem.</h5>
           <% else %>
-            <% @gems.first(1).each do |result| %>
+            <% @gem.first(1).each do |result| %>
               <p class="gem-name"> <a href=" <%= result["project_uri"] %>" target="_blank">
                 <%= result["name"] %></a> <img src="/assets/star-gray" onclick="addToListFavGems(this)"/></p>
               <p class="information"> Information </p>
