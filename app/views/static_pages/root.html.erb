@@ -26,7 +26,7 @@
           	</div>
           <% end %>
           <% if @gem ==  [] %>
-				    <h5>Oh no! Looks like you didn't enter any gem.</h5>
+				    <h5>Please enter a valid ruby gem.</h5>
           <% else %>
             <% @gem.first(1).each do |result| %>
               <p class="gem-name"> <a href=" <%= result["project_uri"] %>" target="_blank">
